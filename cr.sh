@@ -260,8 +260,9 @@ install_chart_releaser() {
   if [[ ! -d "$install_dir" ]]; then
     mkdir -p "$install_dir"
 
-    echo "Installing chart-releaser on $install_dir..."
-    curl -sSLo cr.tar.gz "https://github.com/helm/chart-releaser/releases/download/$version/chart-releaser_${version#v}_linux_amd64.tar.gz"
+    echo "Installing mattclegg/chart-releaser on $install_dir..."
+    curl -sSLo cr.tar.gz "https://github.com/mattclegg/chart-releaser/archive/refs/tags/v1.6.1-68-gb0489e2e.tar.gz"
+    #curl -sSLo cr.tar.gz "https://github.com/helm/chart-releaser/releases/download/$version/chart-releaser_${version#v}_linux_amd64.tar.gz"
     tar -xzf cr.tar.gz -C "$install_dir"
     rm -f cr.tar.gz
   fi
